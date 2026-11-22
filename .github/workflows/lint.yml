@@ -1,18 +1,18 @@
-# Goal when someone changes the python code linter will check the syntx, file format, indentiation. basically all 
+# Goal when someone changes the python code linter will check the syntx, file format, indentiation. basically all
 name: Auto Linter
 
 on:
   push:
     paths: "*.py" #it will check all file with .py when we push any py file then linter will start
 
-  Jobs:
-    code:
-      runs-on: ubunto-latest
-      steps:
-  # This step checks out the code.
-          - name: Checkout/Clone the code
-           uses: actions/checkout@v4
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      # This step checks out the code.
+      - name: Checkout/Clone the code
+        uses: actions/checkout@v4
 
-  # This step installs the linting tool.
-          - name: Install Linter
-            run: pip install ruff 
+      # This step installs the linting tool.
+      - name: Install Linter
+        run: pip install ruff
