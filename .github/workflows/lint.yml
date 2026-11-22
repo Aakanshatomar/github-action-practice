@@ -11,7 +11,7 @@ on:
       steps:
       #this step will automatically clone the code in main branch
         -name: Checkout/Clone the code
-         uses: actions/checkout@v7 #it is to clone the clode and v7 is the image_version: 
+         uses: actions/checkout@v4 #it is to clone the clode and v7 is the image_version: 
   #this step will install the linting tool
          -name: install Linter
           run: pip install ruff
