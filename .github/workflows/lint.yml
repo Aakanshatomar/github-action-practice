@@ -1,0 +1,17 @@
+# Goal when someone changes the python code linter will check the syntx, file format, indentiation. basically all 
+name: Auto Linter
+
+on:
+  push:
+    paths: "*.py" #it will check all file with .py when we push any py file then linter will start
+
+  Jobs:
+    code:
+      runs-on: ubunto-latest
+      steps:
+      #this step will automatically clone the code in main branch
+        -name: Checkout/Clone the code
+         uses: actions/checkout@v7 #it is to clone the clode and v7 is the image_version: 
+  #this step will install the linting tool
+         -name: install Linter
+          run: pip install ruff
