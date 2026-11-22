@@ -18,4 +18,4 @@ jobs:
         run: pip install ruff
           
       - name: Check the Linter
-        run: ruff check app.py
+        run: ruff check --fix app.py
